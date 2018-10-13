@@ -1,0 +1,596 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #333;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+a:link, a:visited, a:hover, a:active, input[type=submit] {
+  color: #fff;
+  text-decoration: none;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+*, *::after, *::before {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ヘッダー */
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #DE836A;
+}
+
+header .nav {
+  height: 90px;
+  overflow: hidden;
+  background: #e3947f;
+  line-height: 90px;
+}
+
+header .nav .title {
+  float: left;
+  font-size: 2.4rem;
+}
+
+header .nav .bar {
+  display: none;
+}
+
+header .nav ul {
+  float: right;
+  font-size: 0;
+}
+
+header .nav ul li {
+  display: inline-block;
+  height: 90px;
+  font-size: 1.8rem;
+}
+
+header .nav ul li a {
+  display: block;
+  padding: 0 20px;
+  transition: all 0.3s;
+}
+
+header .nav ul li a:hover {
+  background: #DE836A;
+}
+
+header .top {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  margin-top: -100px;
+  margin-left: -250px;
+  color: #fff;
+  text-align: center;
+}
+
+header .top h1 {
+  margin-bottom: 30px;
+  font-size: 5.0rem;
+  letter-spacing: 4px;
+}
+
+header .top p {
+  font-size: 1.4rem;
+  line-height: 20px;
+}
+
+/* 投稿 */
+article .posts {
+  margin-bottom: 30px;
+}
+
+article .posts h3 {
+  margin: 30px 0;
+  font-size: 3rem;
+  text-align: center;
+}
+
+article .posts ol {
+  overflow: hidden;
+  counter-reset: ranking;
+}
+
+article .posts ol > li {
+  width: 20%;
+  float: left;
+}
+
+article .posts ol > li a {
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 220px;
+  margin: 0 auto;
+  border: 2px solid #DE836A;
+  transition: all 0.3s;
+}
+
+article .posts ol > li a img {
+  width: 100%;
+  height: 150px;
+}
+
+article .posts ol > li a .order {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #e3947f;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+}
+
+article .posts ol > li a .order::before {
+  font-size: 2.2rem;
+  content: counter(ranking);
+  counter-increment: ranking;
+}
+
+article .posts ol > li a .category {
+  margin: 3px 3px 0px;
+}
+
+article .posts ol > li a .category li {
+  display: inline-block;
+  width: auto;
+  margin-bottom: 3px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #DE836A;
+}
+
+article .posts p.post-title {
+  margin: 2px 3px 5px;
+  color: #333;
+  font-size: 1.6rem;
+}
+
+/* ホバー */
+article .posts ol a:hover {
+  background-color: #DE836A;
+}
+
+article .posts ol a:hover p.post-title {
+  color: #fff;
+}
+
+/* ランキング */
+article .posts ol li:nth-of-type(1) .order {
+  background-color: #dab413;
+}
+
+article .posts ol li:nth-of-type(2) .order {
+  background-color: #6e7b84;
+}
+
+article .posts ol li:nth-of-type(3) .order {
+  background-color: #a0541a;
+}
+
+/* セクション */
+section h2 {
+  position: relative;
+  padding: 40px 0;
+  background-color: #6AC5DE;
+  color: #fff;
+  font-size: 3.6rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+section h2::after {
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  left: 0;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  border-width: 20px 40px 0px 40px;
+  border-style: solid;
+  border-color: #6AC5DE transparent transparent transparent;
+  content: '';
+}
+
+/* SAMPLE8の特徴 */
+.feature {
+  counter-reset: num;
+}
+
+.feature-content {
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+}
+
+.feature-content .feature-desc {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 60%;
+  padding-right: 20px;
+  float: left;
+}
+
+.feature-content .feature-desc p.num {
+  width: 34px;
+  padding: 60px 0px 14px;
+  background-color: #DE836A;
+  text-align: center;
+}
+
+.feature-content .feature-desc p.num::after {
+  color: #fff;
+  font-size: 2.0rem;
+  content: counter(num);
+  counter-increment: num;
+}
+
+.feature-content .feature-desc h3 {
+  margin: 20px 0px;
+  color: #DE836A;
+  font-size: 4.0rem;
+  font-weight: normal;
+}
+
+.feature-content .feature-desc p.en {
+  color: #DE836A;
+  font-size: 2.0rem;
+}
+
+.feature-content .feature-desc p {
+  margin-bottom: 20px;
+  font-size: 2.0rem;
+}
+
+.feature-content .feature-desc a {
+  display: block;
+  width: 140px;
+  padding: 14px 20px;
+  border-radius: 5px;
+  background-color: #6AC5DE;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.feature-content .feature-img {
+  width: 40%;
+  height: 400px;
+  float: right;
+  background-image: url("osaka.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 偶数のとき左画像で右テキスト */
+.feature-content:nth-child(even) .feature-desc {
+  padding: 0px 20px 0px 50px;
+  float: right;
+}
+
+.feature-content:nth-child(even) .feature-img {
+  float: left;
+}
+
+/* サービス紹介 */
+.service-content {
+  margin: 50px 0;
+  overflow: hidden;
+}
+
+.service-content .service-in {
+  text-align: center;
+}
+
+.service-content .service-in h3 {
+  margin: 20px 0px;
+  color: #DE836A;
+  font-size: 4.0rem;
+  font-weight: normal;
+}
+
+.service-content .service-in p.en {
+  margin-bottom: 20px;
+  color: #DE836A;
+  font-size: 2.0rem;
+}
+
+.service-content .service-in a {
+  display: block;
+  width: 280px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #6AC5DE;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.service-content .service-left {
+  width: 50%;
+  float: left;
+}
+
+.service-content .service-right {
+  width: 50%;
+  float: left;
+}
+
+/* 会社紹介 */
+.company-content {
+  overflow: hidden;
+}
+
+.company-content .company-left {
+  width: 60%;
+  margin-top: 80px;
+  float: left;
+  font-size: 1.8rem;
+}
+
+.company-content .company-left dl {
+  padding: 30px 0;
+  overflow: hidden;
+  border-top: 1px solid #ccc;
+}
+
+.company-content .company-left dl:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.company-content .company-left dl dt {
+  width: 20%;
+  float: left;
+}
+
+.company-content .company-left dl dd {
+  width: 80%;
+  float: left;
+}
+
+.company-content .company-right {
+  width: 40%;
+  height: 400px;
+  float: right;
+  background-image: url("osaka.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* お問い合わせ */
+.contact {
+  background-color: #DE836A;
+}
+
+.contact-content {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.contact-content input[type=text] {
+  width: 100%;
+  height: 40px;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: 0;
+  font-size: 1.6rem;
+}
+
+.contact-content textarea {
+  width: 100%;
+  height: 40px;
+  height: 100px;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: 0;
+  font-size: 1.6rem;
+}
+
+.contact-content input[type=submit] {
+  display: block;
+  width: 100px;
+  width: 150px;
+  margin: 10px auto 0;
+  padding: 8px;
+  padding: 6px;
+  border-radius: 5px;
+  background-color: #6AC5DE;
+  font-size: 1.8rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.contact-content p {
+  margin: 10px;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+/* フッター */
+.reference {
+  background-color: #2A2F35;
+  color: #fff;
+}
+
+.reference .tmp {
+  padding: 40px 0;
+  border-bottom: 1px solid #fff;
+  font-size: 3.0rem;
+}
+
+.reference .links {
+  padding: 30px 0;
+  overflow: hidden;
+  font-size: 1.6rem;
+}
+
+.reference .links .link-blog {
+  width: auto;
+  margin-right: 40px;
+  float: left;
+}
+
+.reference .links .link-sns {
+  width: auto;
+  float: left;
+}
+
+.reference .links li {
+  margin-bottom: 20px;
+}
+
+.reference .links li i {
+  margin-right: 8px;
+}
+
+.copy {
+  padding: 30px 0;
+  background-color: #1f2227;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  header .nav {
+    position: relative;
+  }
+  header .nav .bar {
+    display: block;
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+    font-size: 3.4rem;
+    cursor: pointer;
+  }
+  header .nav ul {
+    display: none;
+  }
+  header .top {
+    width: 280px;
+    margin-left: -140px;
+  }
+  header .top h1 {
+    font-size: 3.0rem;
+  }
+  article .posts ol > li {
+    width: auto;
+    margin: 0 auto 10px;
+    float: none;
+  }
+  article .posts ol li:nth-of-type(-n + 3) {
+    width: auto;
+  }
+  .feature-content {
+    background-image: url("osaka.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .feature-content .feature-desc {
+    width: auto;
+    padding: 0 0 30px;
+    float: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+  }
+  .feature-content .feature-desc h3 {
+    font-size: 3.0rem;
+  }
+  .feature-content .feature-desc a {
+    margin: 0 auto;
+  }
+  .feature-content .feature-img {
+    display: none;
+  }
+  .feature-content:nth-child(even) .feature-desc {
+    width: auto;
+    padding: 0 0 30px;
+    float: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+  }
+  .service-content .service-in h3 {
+    font-size: 3.0rem;
+  }
+  .service-content .service-left {
+    width: auto;
+    float: none;
+  }
+  .service-content .service-right {
+    width: auto;
+    float: none;
+  }
+  .company-content .company-left {
+    width: auto;
+    float: none;
+  }
+  .company-content .company-left dl dt {
+    width: auto;
+    margin-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    float: none;
+  }
+  .company-content .company-left dl dd {
+    width: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    float: none;
+  }
+  .company-content .company-right {
+    width: auto;
+    float: none;
+  }
+  .contact-content {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .reference .links {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1040px) {
+  article .posts ol li:nth-of-type(n + 4) {
+    display: none;
+  }
+  article .posts ol li:nth-of-type(-n + 3) {
+    width: 33.33333%;
+  }
+}
